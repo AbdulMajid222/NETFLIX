@@ -1,0 +1,45 @@
+const swiper = new Swiper('.slider-wrapper', {
+  // Optional parameters
+ 
+  loop: true,
+  grabCurser:true,
+  spaceBetween:30,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable:true,
+    dynamicBullets:true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  breakpoints:{
+    0:{
+        slidesPerView:1
+    },
+    620:{
+        slidesPerView:2
+    },
+    1024:{
+        slidesPerView:3
+    }
+  }
+
+
+});
+const acc = document.querySelectorAll(".accordion");
+
+acc.forEach(btn => {
+    btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+    });
+});
+
+
